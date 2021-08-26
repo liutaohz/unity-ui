@@ -1,6 +1,6 @@
 # unity-ui
 
-[文档地址地址](https://EasySimple.github.io/unity-ui/)
+[文档地址地址](https://easysimple.github.io/unity-ui/)
 
 ## Getting Started
 
@@ -22,8 +22,13 @@ Build documentation,
 $ npm run docs:build
 ```
 
-Build library via `father-build`,
+## git
 
 ```bash
-$ npm run build
+$ git add .
+
+$ npm run cz
+
+$ git push
+
 ```

@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "unity-ui",
   "author": "liutao",
   "version": "0.0.1",
@@ -11,6 +10,13 @@
     "deploy": "npm run docs:build && npm run docs:deploy",
     "release": "npm run build && npm publish",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "cz": "git cz",
+    "version:major": "standard-version -r major -n",
+    "version:minor": "standard-version -r minor -n",
+    "version:patch": "standard-version -r patch -n",
+    "version:alpha": "standard-version -p alpha -n",
+    "version:beta": "standard-version -p beta -n",
+    "version:rc": "standard-version -p rc -n",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
   },
@@ -33,11 +39,20 @@
   },
   "devDependencies": {
     "@umijs/test": "^3.0.5",
+    "commitizen": "^4.2.4",
     "dumi": "^1.0.16",
     "father-build": "^1.17.2",
     "gh-pages": "^3.0.0",
+    "git-cz": "^4.7.6",
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.1",
+    "standard-version": "^9.3.1",
     "yorkie": "^2.0.0"
+  },
+  "homepage": "https://easysimple.github.io/unity-ui/",
+  "bugs": "https://github.com/EasySimple/unity-ui/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EasySimple/unity-ui"
   }
 }
