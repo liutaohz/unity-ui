@@ -2,6 +2,7 @@
 
 [文档地址地址](https://easysimple.github.io/unity-ui/)
 
+[ChangeLog](./CHANGELOG.md)
 ## Getting Started
 
 Install dependencies,
