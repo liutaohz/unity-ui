@@ -2,6 +2,15 @@
   "name": "unity-ui",
   "author": "liutao",
   "version": "0.0.2",
+  "homepage": "https://easysimple.github.io/unity-ui/",
+  "bugs": "https://github.com/EasySimple/unity-ui/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EasySimple/unity-ui"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -54,11 +63,5 @@
     "commitizen": {
       "path": "git-cz"
     }
-  },
-  "homepage": "https://easysimple.github.io/unity-ui/",
-  "bugs": "https://github.com/EasySimple/unity-ui/issues",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/EasySimple/unity-ui"
   }
 }
