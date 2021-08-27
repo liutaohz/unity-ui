@@ -11,6 +11,9 @@ export default defineConfig({
   history: {
     type: 'hash',
   },
+  alias: {
+    img: '@/assets/img',
+  },
   navs: [
     null,
     {
