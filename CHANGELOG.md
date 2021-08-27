@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.5 (2021-08-27)
+
+### Bug 修复
+
+- 🐛 背景图片地址问题 ([04f8770](https://github.com/EasySimple/unity-ui/commit/04f8770cdef2dd7d6d1f78b089dc6bdcc54aa752))
+
 ### 0.0.4 (2021-08-27)
 
 ### 新特性
