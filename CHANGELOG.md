@@ -2,11 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.6 (2021-08-27)
+
+### 配置项
+
+- 🤖 图片路径 alias ([5a6e94e](https://github.com/EasySimple/unity-ui/commit/5a6e94e7f9815057b58ef17b3961d89f69e8488f))
+
 ### 0.0.5 (2021-08-27)
 
 ### Bug 修复
 
 - 🐛 背景图片地址问题 ([04f8770](https://github.com/EasySimple/unity-ui/commit/04f8770cdef2dd7d6d1f78b089dc6bdcc54aa752))
+
+### 配置项
+
+- 🤖 修改发布配置 ([4ce7d3b](https://github.com/EasySimple/unity-ui/commit/4ce7d3bacf63d5c55607509df6b8532f41f7edb7))
+- 🤖 修改 changeLog 文档配置 ([b6b2265](https://github.com/EasySimple/unity-ui/commit/b6b226548e5f5e95df021ebdd75c5b2af00a42b4))
 
 ### 0.0.4 (2021-08-27)
 

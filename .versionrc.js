@@ -8,8 +8,8 @@ module.exports = {
   types: [
     { type: 'feat', section: '新特性' },
     { type: 'fix', section: 'Bug修复' },
-    { type: 'docs', section: '文档', hidden: true  },
-    { type: 'chore', section: '配置项', hidden: true },
+    { type: 'docs', section: '文档', hidden: true },
+    { type: 'chore', section: '配置项' },
     { type: 'style', section: '样式', hidden: true },
     { type: 'refactor', section: '重构', hidden: true },
     { type: 'perf', section: '性能', hidden: true },
