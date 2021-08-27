@@ -1,8 +1,3 @@
----
-nav:
-  title: 首页
----
-
 ## Quick Start
 
 ### Install
@@ -42,6 +37,9 @@ export default <Foo />;
 - 通过**yarn doc:build**构建文档
 - 通过**yarn doc:deploy**部署文档 (ssh 需要密码)
 
+### ChangeLog
+
+[跟新日志](https://github.com/EasySimple/unity-ui/blob/master/CHANGELOG.md)
 
 ### More
 
