@@ -29,7 +29,7 @@ export default () => {
   );
   return (
     <div style={{ padding: '20px' }}>
-      <PhoneView url={`${window.location.origin}/#/`} mode={'url'} />
+      <PhoneView url={`${window.location.origin}/unity-ui/#/`} mode={'url'} />
       <PhoneView mode={'div'} children={testIn} />
     </div>
   );
