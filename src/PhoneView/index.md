@@ -4,7 +4,24 @@
 
 Demo:
 
-```tsx | inline
+模式为 url
+
+```tsx |
+import React from 'react';
+import { PhoneView } from 'unity-ui';
+
+export default () => {
+  return (
+    <div style={{ padding: '20px' }}>
+      <PhoneView url={`${window.location.origin}/unity-ui/#/`} mode={'url'} />
+    </div>
+  );
+};
+```
+
+模式为 div
+
+```tsx |
 import React from 'react';
 import { PhoneView } from 'unity-ui';
 
@@ -31,7 +48,6 @@ export default () => {
   );
   return (
     <div style={{ padding: '20px' }}>
-      <PhoneView url={`${window.location.origin}/unity-ui/#/`} mode={'url'} />
       <PhoneView mode={'div'} children={testIn} />
     </div>
   );
