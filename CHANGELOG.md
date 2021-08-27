@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.8 (2021-08-27)
+
+### 配置项
+
+- 🤖 配置.png 资源 ([fbe6691](https://github.com/EasySimple/unity-ui/commit/fbe66915a84c6305ee026455e8e5ec54ef39115a))
+
 ### 0.0.7 (2021-08-27)
 
 静态资源走 OSS
