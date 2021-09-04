@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.10 (2021-09-04)
+
+### 新特性
+
+- 🎸 新增 WaveWrap 组件 ([3a0e19b](https://github.com/EasySimple/unity-ui/commit/3a0e19ba768c5075d596037ac43588385a87a2b8))
+
 ### 0.0.9 (2021-08-27)
 
 为保证稳定性，不再使用 OSS 图片，使用 base64
