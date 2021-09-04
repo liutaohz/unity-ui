@@ -6,11 +6,21 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
     />
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png"
-    />
+    <link rel="shortcut icon" type="image/x-icon" href="./unity-ui.png" />
+    <style>
+      .__dumi-default-menu-header h1 {
+        display: none;
+      }
+      .__dumi-default-menu-logo {
+        width: 150px !important;
+      }
+      @media only screen and (max-width: 767px) {
+        .__dumi-default-navbar-logo:not([data-plaintext]) {
+          padding: 0 50px;
+          color: transparent;
+        }
+      }
+    </style>
     <link rel="stylesheet" href="/unity-ui/umi.css" />
     <script>
       window.routerBase = "/";
