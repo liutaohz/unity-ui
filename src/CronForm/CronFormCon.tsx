@@ -4,6 +4,7 @@ import React, {
   forwardRef,
   useImperativeHandle,
 } from 'react';
+import CustomIcon from './CustomIcon';
 import {
   Input,
   InputNumber,
@@ -414,6 +415,7 @@ const Cron = (props: { cronExpression: string }, ref: any) => {
           {
             label: `秒`,
             key: '1',
+            icon: <CustomIcon />,
             children: (
               <Card className={classes['card-top']}>
                 <Radio.Group
@@ -496,6 +498,7 @@ const Cron = (props: { cronExpression: string }, ref: any) => {
           {
             label: `分`,
             key: '2',
+            icon: <CustomIcon />,
             children: (
               <Card className={classes['card-top']}>
                 <Radio.Group
@@ -577,6 +580,7 @@ const Cron = (props: { cronExpression: string }, ref: any) => {
           {
             label: `时`,
             key: '3',
+            icon: <CustomIcon />,
             children: (
               <Card className={classes['card-top']}>
                 <Radio.Group
@@ -659,6 +663,7 @@ const Cron = (props: { cronExpression: string }, ref: any) => {
           {
             label: `日`,
             key: '4',
+            icon: <CustomIcon />,
             children: (
               <Card className={classes['card-top']}>
                 <Radio.Group
@@ -743,6 +748,7 @@ const Cron = (props: { cronExpression: string }, ref: any) => {
           {
             label: `月`,
             key: '5',
+            icon: <CustomIcon />,
             children: (
               <Card className={classes['card-top']}>
                 <Radio.Group
@@ -826,6 +832,7 @@ const Cron = (props: { cronExpression: string }, ref: any) => {
           {
             label: `周`,
             key: '6',
+            icon: <CustomIcon />,
             children: (
               <Card className={classes['card-top']}>
                 <Radio.Group
@@ -841,7 +848,7 @@ const Cron = (props: { cronExpression: string }, ref: any) => {
                   <Row>
                     <Col>
                       <Radio style={radioStyle} value="period">
-                        周期从 周
+                        周期从
                       </Radio>
                     </Col>
                     <Col>
@@ -856,7 +863,7 @@ const Cron = (props: { cronExpression: string }, ref: any) => {
                         options={createWeekSelect(7)}
                       />
                     </Col>
-                    <Col className={classes['week-font']}>- 周</Col>
+                    <Col className={classes['week-font']}>-</Col>
                     <Col>
                       <Select
                         style={{ marginTop: 7 }}

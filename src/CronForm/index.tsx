@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 import { Button, Input, Space, Modal } from 'antd';
 import CronFormCon from './CronFormCon';
+const CronParser = require('cron-parser');
 import styles from './index.less';
 interface CronFormProps {
   value?: any;
@@ -36,7 +37,14 @@ const CronForm: React.FC<CronFormProps> = ({
   const [isCronOpen, setIsCronOpen] = useState(false);
   const cronRef = useRef<any>();
   useEffect(() => {
-    setCurValue(value);
+    try {
+      try {
+        CronParser.parseExpression(value);
+        setCurValue(value);
+      } catch (error) {
+        setCurValue('');
+      }
+    } catch (error) {}
   }, [value]);
   const inputChange = useCallback(
     (val: any) => {
@@ -50,7 +58,10 @@ const CronForm: React.FC<CronFormProps> = ({
   };
   return (
     <>
-      <div className={`${styles.cronForm} ${className}`} style={customStyle}>
+      <div
+        className={`${styles.dumi_cronForm} ${className}`}
+        style={customStyle}
+      >
         <Space.Compact style={{ width: '100%' }}>
           <Input
             placeholder={placeholder}
