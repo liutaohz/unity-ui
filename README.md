@@ -2,9 +2,9 @@
 
 一个小而美的 UI 组件库
 
-[文档地址地址](https://liutaohz.github.io/unity-ui/)
-
-[ChangeLog](./CHANGELOG.md)
+- [npm](https://www.npmjs.com/package/unity-ui)
+- [文档地址地址](https://liutaohz.github.io/unity-ui/)
+- [ChangeLog](./CHANGELOG.md)
 
 ## Getting Started
 
