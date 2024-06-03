@@ -49,15 +49,6 @@ export default () => {
 
 ### API
 
-value?: any;
-onChange?: (value: any) => void;
-placeholder?: string;
-className?: any;
-customStyle?: any; // 自定义样式
-btnProps?: any;
-btnTxt?: any;
-modalTitle?: any;
-
 | 属性        | 说明                         | 类型                                                      | 必填 | 默认值   |
 | ----------- | ---------------------------- | --------------------------------------------------------- | ---- | -------- |
 | value       | 表单 value                   | string                                                    | 否   | 无       |
