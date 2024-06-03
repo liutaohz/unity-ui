@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.12 (2024-06-03)
+
+### CI
+
+- 🎡 git-cz config ([d6cc294](https://github.com/liutaohz/unity-ui/commit/d6cc294232625af83376c4497d522e8261f02c2e))
+
+### Bug 修复
+
+- 🐛 背景图片地址问题 ([04f8770](https://github.com/liutaohz/unity-ui/commit/04f8770cdef2dd7d6d1f78b089dc6bdcc54aa752))
+
+### 配置项
+
+- 🤖 修改 changeLog 文档配置 ([b6b2265](https://github.com/liutaohz/unity-ui/commit/b6b226548e5f5e95df021ebdd75c5b2af00a42b4))
+- 🤖 修改发布配置 ([4ce7d3b](https://github.com/liutaohz/unity-ui/commit/4ce7d3bacf63d5c55607509df6b8532f41f7edb7))
+- 🤖 图片路径 alias ([5a6e94e](https://github.com/liutaohz/unity-ui/commit/5a6e94e7f9815057b58ef17b3961d89f69e8488f))
+- 🤖 配置.png 资源 ([fbe6691](https://github.com/liutaohz/unity-ui/commit/fbe66915a84c6305ee026455e8e5ec54ef39115a))
+
+### 新特性
+
+- 🎸 PhoneView ([7ef1cd2](https://github.com/liutaohz/unity-ui/commit/7ef1cd267ebbec512be607dc7ddf83d9440fa55f))
+- 🎸 新增 ChangeLog 配置,规范 commit 提交,显示 commit message ([2153c8b](https://github.com/liutaohz/unity-ui/commit/2153c8ba81ec021314a1e51f990ba53cd56e48e7))
+- 🎸 新增 CronForm ([c1a60be](https://github.com/liutaohz/unity-ui/commit/c1a60be47211ae9c2146141bc161f9cd54107bdb))
+- 🎸 新增 WaveWrap 组件 ([3a0e19b](https://github.com/liutaohz/unity-ui/commit/3a0e19ba768c5075d596037ac43588385a87a2b8))
+
 ### 0.0.11 (2024-06-03)
 
 ### CI
