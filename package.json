@@ -2,11 +2,11 @@
   "name": "unity-ui",
   "author": "liutao",
   "version": "0.0.10",
-  "homepage": "https://easysimple.github.io/unity-ui/",
-  "bugs": "https://github.com/EasySimple/unity-ui/issues",
+  "homepage": "https://liutaohz.github.io/unity-ui/",
+  "bugs": "https://github.com/liutaohz/unity-ui/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/EasySimple/unity-ui"
+    "url": "https://github.com/liutaohz/unity-ui"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
