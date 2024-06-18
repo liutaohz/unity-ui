@@ -1,0 +1,89 @@
+.dumi_conditionBuilder {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: auto;
+  .conditionList {
+    box-sizing: border-box;
+    padding: 12px;
+    padding-left: 48px;
+    padding-right: 0;
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+    position: relative;
+    :global {
+      .ant-form-item {
+        margin-bottom: 0px !important;
+      }
+    }
+    .leftLine {
+      width: 2px;
+      height: calc(100% - 40px);
+      position: absolute;
+      top: 20px;
+      left: 31px;
+      .lineMidBox {
+        width: 20px;
+        height: 20px;
+        box-sizing: border-box;
+        border-radius: 2px;
+        position: absolute;
+        left: -9px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+  }
+  .conditionListItem {
+    background-color: #f1f1f1;
+    padding: 10px;
+    padding-right: 0;
+    margin-bottom: 10px;
+  }
+  .conditionListOptions {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .conditionListCon {
+    padding: 6px;
+    min-height: 30px;
+    padding-bottom: 0;
+  }
+  .groupBtn {
+    margin-right: 12px;
+  }
+}
+
+.dropdown {
+  padding: 0;
+  .menuItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 6px 8px;
+    width: 50px;
+  }
+
+  :global {
+    .ant-dropdown {
+      &.ant-dropdown-menu {
+        padding: 0 !important;
+      }
+    }
+    .ant-dropdown-menu-title-content {
+      padding: 0 !important;
+    }
+
+    .ant-dropdown-menu-item,
+    .ant-dropdown-menu-item-only-child {
+      padding: 0 !important;
+    }
+  }
+}
