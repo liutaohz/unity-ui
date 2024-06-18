@@ -6,7 +6,8 @@ import React, {
   useMemo,
   useCallback,
 } from 'react';
-import { cloneDeep, get } from 'lodash';
+// import { cloneDeep, get } from 'lodash';
+import * as _ from 'lodash';
 import { MinusCircleOutlined } from '@ant-design/icons';
 import { nanoid } from 'nanoid';
 import {
@@ -33,7 +34,7 @@ import NumberRange from './NumberRange';
 import RangePickerForm from './RangePickerForm';
 import 'dayjs/locale/zh-cn';
 import zhCN from 'antd/locale/zh_CN';
-import dayjs from 'dayjs';
+import dayjs from 'dayjs/esm';
 import styles from './index.less';
 dayjs.locale('zh-cn');
 const DropdownMenuOptions: any = conjunctionOptions.map((item: any) => {
@@ -126,7 +127,7 @@ const ConditionBuilder = (props: any) => {
     const defaultDateFormat = 'YYYY-MM-DD HH:mm:ss';
     const defaultTimeFormatt = 'HH:mm:ss';
     // const [startTime = null, endTime = null] = (propsItem?.right || [])
-    const curKeyPathArr = cloneDeep(keyPathArr);
+    const curKeyPathArr = _.cloneDeep(keyPathArr);
     let opOptions: any = [];
     // const curKey = leftSelectOptions?.find((item:any)=>item.value===propsItem?.left?.value)?.type;
     // if(propsItem?.left){
@@ -378,9 +379,9 @@ const ConditionBuilder = (props: any) => {
     restField: any,
     keyPathArr: Array<any>,
   ) => {
-    const curKeyPathArr = cloneDeep(keyPathArr);
+    const curKeyPathArr = _.cloneDeep(keyPathArr);
     const curConditionStr =
-      get(curConditionList, [...curKeyPathArr, 'conjunction']) || 'and';
+      _.get(curConditionList, [...curKeyPathArr, 'conjunction']) || 'and';
     const curConditionInfo: any = conjunctionOptions.find(
       (item: any) => item?.value === curConditionStr,
     );
@@ -411,7 +412,7 @@ const ConditionBuilder = (props: any) => {
                 {fields.map((formProps2: any, index) => {
                   const { key, name, ...restField } = formProps2;
                   const nowKeyPath = [...curKeyPathArr, 'conditionList', name];
-                  const curItem: any = get(curConditionList, nowKeyPath);
+                  const curItem: any = _.get(curConditionList, nowKeyPath);
                   // const curFormValue = conditionForm.getFieldValue(curPath);
                   let innerForm: any = '';
                   if (curItem?.type === ConditionType.group) {

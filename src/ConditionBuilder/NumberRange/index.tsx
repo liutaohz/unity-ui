@@ -6,7 +6,6 @@ import React, {
   useEffect,
 } from 'react';
 import { InputNumber } from 'antd';
-import dayjs from 'dayjs';
 interface NumberRangeProps {
   value?: any;
   onChange?: (value: any) => void;

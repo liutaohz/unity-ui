@@ -45,8 +45,8 @@
     ]
   },
   "dependencies": {
-    "antd": "^5.17.4",
     "@ant-design/icons": "^4.8.0",
+    "antd": "^5.17.4",
     "classnames": "^2.3.1",
     "react": "^16.12.0"
   },

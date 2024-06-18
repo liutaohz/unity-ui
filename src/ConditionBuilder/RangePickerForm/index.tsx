@@ -6,7 +6,7 @@ import React, {
   useEffect,
 } from 'react';
 import { DatePicker } from 'antd';
-import dayjs from 'dayjs';
+import dayjs from 'dayjs/esm';
 const { RangePicker } = DatePicker;
 interface RangePickerFormProps {
   value?: any;
