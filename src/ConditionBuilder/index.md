@@ -6,6 +6,8 @@ Demo:
 
 一些表单类型使用 Demo
 
+交互模仿https://baidu.github.io/amis/zh-CN/components/form/condition-builder
+
 ```tsx
 import React from 'react';
 import { ConditionBuilder } from 'unity-ui';
