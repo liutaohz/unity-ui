@@ -23,6 +23,7 @@ import {
   TimePicker,
 } from 'antd';
 import {
+  LeftType,
   ConditionRecord,
   ConditionType,
   ConjunctionEnum,
@@ -37,6 +38,7 @@ import zhCN from 'antd/locale/zh_CN';
 import dayjs from 'dayjs/esm';
 import styles from './index.less';
 dayjs.locale('zh-cn');
+
 const DropdownMenuOptions: any = conjunctionOptions.map((item: any) => {
   return {
     label: (
@@ -60,12 +62,20 @@ const mockData = {
   conjunction: 'and',
   desc: '',
 };
-const ConditionBuilder = (props: any) => {
+interface ConditionBuildeProps {
+  leftSelectOptions: Array<LeftType>; // 左侧下拉选择，也就是整个配置项
+  readonly?: boolean; // 表单只读模式，也就是disable
+  initialValue?: any; // 外面传入的表单初始值
+  conditionForm?: any; // 外面传入的表单，方便外层调用表单校验以及表单提交
+  maxDeep?: number;
+}
+const ConditionBuilder = (props: ConditionBuildeProps) => {
   const {
     leftSelectOptions = [],
     readonly,
     initialValue,
     conditionForm: form,
+    maxDeep = 5,
   } = props;
   const [conditionForm] = Form.useForm(form);
   // const { leftSelectOptions = [], readonly, initialValue } = props;
@@ -123,7 +133,26 @@ const ConditionBuilder = (props: any) => {
     keyPathArr: Array<any>,
   ) => {
     let result: any = '';
-    const { showTime = true, format, maxCount = 100 } = propsItem?.left || {};
+    // const { showTime = true, format, maxCount = 100 } = propsItem?.left || {};
+    // textFormProps numberFormProps dateFormProps timeFormProps selectFormProps
+    const {
+      textFormProps = {
+        placeholder: '请输入值',
+      },
+      numberFormProps = {
+        placeholder: '请输入数字',
+      },
+      dateFormProps = {
+        showTime: true,
+        format: 'YYYY-MM-DD HH:mm:ss',
+      },
+      timeFormProps = {
+        format: 'HH:mm:ss',
+      },
+      selectFormProps = {
+        options: [],
+      },
+    } = propsItem?.left || {};
     const defaultDateFormat = 'YYYY-MM-DD HH:mm:ss';
     const defaultTimeFormatt = 'HH:mm:ss';
     // const [startTime = null, endTime = null] = (propsItem?.right || [])
@@ -145,7 +174,7 @@ const ConditionBuilder = (props: any) => {
         name={[formProps.name, 'right']}
         rules={[{ required: true, message: '请输入' }]}
       >
-        <Input placeholder="请输入值" />
+        <Input placeholder="请输入值" {...textFormProps} />
       </Form.Item>
     );
     try {
@@ -161,7 +190,11 @@ const ConditionBuilder = (props: any) => {
                 name={[formProps.name, 'right']}
                 rules={[{ required: true, message: '请输入' }]}
               >
-                <Input style={{ width: 200 }} placeholder="请输入值" />
+                <Input
+                  style={{ width: 200 }}
+                  placeholder="请输入值"
+                  {...textFormProps}
+                />
               </Form.Item>
             );
             break;
@@ -174,7 +207,7 @@ const ConditionBuilder = (props: any) => {
                   name={[formProps.name, 'right']}
                   rules={[{ required: true, message: '请输入' }]}
                 >
-                  <NumberRange />
+                  <NumberRange {...numberFormProps} />
                 </Form.Item>
               );
             } else {
@@ -185,7 +218,11 @@ const ConditionBuilder = (props: any) => {
                   name={[formProps.name, 'right']}
                   rules={[{ required: true, message: '请输入' }]}
                 >
-                  <InputNumber placeholder="请输入" style={{ width: 200 }} />
+                  <InputNumber
+                    placeholder="请输入"
+                    style={{ width: 200 }}
+                    {...numberFormProps}
+                  />
                 </Form.Item>
               );
             }
@@ -200,11 +237,7 @@ const ConditionBuilder = (props: any) => {
                   rules={[{ required: true, message: '请输入' }]}
                   // initialValue={[startTime ? dayjs(startTime, format || defaultDateFormat) : null, endTime ? dayjs(endTime, format || defaultDateFormat) : null]}
                 >
-                  <RangePickerForm
-                    readonly={readonly}
-                    showTime={showTime}
-                    format={format || defaultDateFormat}
-                  />
+                  <RangePickerForm readonly={readonly} {...dateFormProps} />
                 </Form.Item>
               );
             } else {
@@ -215,11 +248,7 @@ const ConditionBuilder = (props: any) => {
                   name={[formProps.name, 'right']}
                   rules={[{ required: true, message: '请输入' }]}
                 >
-                  <DatePicker
-                    showTime={showTime}
-                    style={{ width: 200 }}
-                    format={format || defaultDateFormat}
-                  />
+                  <DatePicker style={{ width: 200 }} {...dateFormProps} />
                 </Form.Item>
               );
             }
@@ -234,9 +263,7 @@ const ConditionBuilder = (props: any) => {
                   rules={[{ required: true, message: '请输入' }]}
                   // initialValue={[startTime ? dayjs(startTime, format || defaultTimeFormatt) : null, endTime ? dayjs(endTime, format || defaultTimeFormatt) : null]}
                 >
-                  <TimePicker.RangePicker
-                    format={format || defaultTimeFormatt}
-                  />
+                  <TimePicker.RangePicker {...timeFormProps} />
                 </Form.Item>
               );
             } else {
@@ -247,7 +274,7 @@ const ConditionBuilder = (props: any) => {
                   name={[formProps.name, 'right']}
                   rules={[{ required: true, message: '请输入' }]}
                 >
-                  <TimePicker format={format || defaultTimeFormatt} />
+                  <TimePicker {...timeFormProps} />
                 </Form.Item>
               );
             }
@@ -269,10 +296,10 @@ const ConditionBuilder = (props: any) => {
                   }
                   allowClear
                   mode="multiple"
-                  maxCount={maxCount}
                   labelInValue
                   placeholder="请选择"
-                  options={propsItem?.left?.selectOptions || []}
+                  // options={propsItem?.left?.selectOptions || []}
+                  {...selectFormProps}
                 ></Select>
               </Form.Item>
             );
@@ -454,7 +481,7 @@ const ConditionBuilder = (props: any) => {
                 >
                   添加条件
                 </Button>
-                {propsItem?.deep < 5 && (
+                {propsItem?.deep < maxDeep && (
                   <Button
                     className={styles.groupBtn}
                     type="primary"
@@ -535,7 +562,11 @@ const ConditionBuilder = (props: any) => {
   return (
     <div className={styles.dumi_conditionBuilder}>
       <ConfigProvider locale={zhCN}>
-        <Form form={conditionForm} onFinish={handleFormFinish}>
+        <Form
+          form={conditionForm}
+          onFinish={handleFormFinish}
+          disabled={readonly}
+        >
           <Form.Item noStyle name={['id']} initialValue={nanoid()} />
           <Form.Item noStyle name={['conjunction']} initialValue={'and'} />
           <Form.List name="conditionList">

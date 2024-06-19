@@ -11,7 +11,6 @@ interface NumberRangeProps {
   onChange?: (value: any) => void;
   readonly?: boolean;
   customStyle?: any;
-  restProps?: any;
 }
 
 const NumberRange: React.FC<NumberRangeProps> = ({
@@ -19,15 +18,18 @@ const NumberRange: React.FC<NumberRangeProps> = ({
   readonly = false,
   customStyle = {},
   onChange = (value: any) => {},
-  restProps = {},
+  ...restProps
 }) => {
   const changeStartNum = (val: any) => {
     console.log('changed', val);
-    onChange([val, value[1]]);
+    if (readonly) {
+      onChange([val, value[1]]);
+    }
   };
   const changeEndNum = (val: any) => {
-    console.log('changed', val);
-    onChange([value[1], val]);
+    if (readonly) {
+      onChange([value[0], val]);
+    }
   };
   return (
     <>
@@ -36,6 +38,7 @@ const NumberRange: React.FC<NumberRangeProps> = ({
         placeholder="请输入"
         defaultValue={value[0]}
         onChange={changeStartNum}
+        {...restProps}
       />
       <span style={{ margin: '0 4px' }}>至</span>
       <InputNumber
@@ -43,6 +46,7 @@ const NumberRange: React.FC<NumberRangeProps> = ({
         placeholder="请输入"
         defaultValue={value[1]}
         onChange={changeEndNum}
+        {...restProps}
       />
     </>
   );

@@ -15,7 +15,6 @@ interface RangePickerFormProps {
   showTime?: boolean;
   customStyle?: any;
   format?: string;
-  restProps?: any;
 }
 
 const RangePickerForm: React.FC<RangePickerFormProps> = ({
@@ -25,7 +24,7 @@ const RangePickerForm: React.FC<RangePickerFormProps> = ({
   format = 'YYYY-MM-DD HH:mm:ss',
   customStyle = {},
   onChange = (value: any) => {},
-  restProps = {},
+  ...restProps
 }) => {
   const curValue = useMemo(() => {
     let timeInit: any = [null, null];

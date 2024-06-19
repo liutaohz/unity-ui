@@ -1,3 +1,10 @@
+import type {
+  InputProps,
+  InputNumberProps,
+  DatePickerProps,
+  TimePickerProps,
+  TimeRangePickerProps,
+} from 'antd';
 export enum ConditionFormTypeEnum {
   text = 'text', // 文本
   number = 'number', // 数字
@@ -5,18 +12,55 @@ export enum ConditionFormTypeEnum {
   time = 'time', // 时间 时分秒
   select = 'select', // 下拉选择，当是此种类型时需要注入配置option数组selectOptions
 }
+
 export enum ConditionType {
   single = 'single', // 单个条件
   group = 'group', // 条件组
 }
-
-type LeftType = {
+// 公共基础类型
+interface BaseField {
+  type: ConditionFormTypeEnum;
   value: string;
   label: string;
-  type: ConditionFormTypeEnum;
-  selectOptions?: Array<any>; //可选的下拉option
-  valueTypeOptions?: Array<any>; // 变量可选的下拉option
-};
+}
+
+interface TextField extends BaseField {
+  type: ConditionFormTypeEnum.text;
+  textFormProps?: InputProps;
+}
+
+interface NumberField extends BaseField {
+  type: ConditionFormTypeEnum.number;
+  numberFormProps?: InputNumberProps;
+}
+
+interface DateField extends BaseField {
+  type: ConditionFormTypeEnum.date;
+  dateFormProps?: DatePickerProps;
+}
+
+interface TimeField extends BaseField {
+  type: ConditionFormTypeEnum.time;
+  timeFormProps?: TimePickerProps | TimeRangePickerProps;
+}
+
+interface SelectField extends BaseField {
+  type: ConditionFormTypeEnum.select;
+  selectFormProps?: InputNumberProps;
+}
+export type LeftType =
+  | TextField
+  | NumberField
+  | DateField
+  | TimeField
+  | SelectField;
+
+// type LeftType = {
+//   value: string;
+//   label: string;
+//   type: ConditionFormTypeEnum;
+//   selectOptions?: Array<any>; //可选的下拉option
+// };
 export enum ConjunctionEnum {
   and = 'and', // 单个条件
   or = 'or', // 条件组
@@ -26,7 +70,7 @@ export type ConditionRecord = {
   id: string; // 条件ID
   type: ConditionType;
   conjunction: ConjunctionEnum; // 且、或 连词
-  conditionList?: ConditionRecord[];
+  conditionList?: Array<ConditionRecord>;
   left?: LeftType | undefined;
   op?: string; // 表达式
   right?: any; // 结果
