@@ -92,7 +92,7 @@ const ConditionBuilder = (props: ConditionBuildeProps) => {
   useEffect(() => {
     console.log('curConditionData:', curConditionData);
   }, [curConditionData]);
-  const makeRule = useCallback((type: ConditionType, deep: number = 0) => {
+  const makeCondition = useCallback((type: ConditionType, deep: number = 0) => {
     let obj: ConditionRecord = {
       deep: deep + 1,
       type, // group single
@@ -473,10 +473,7 @@ const ConditionBuilder = (props: ConditionBuildeProps) => {
                   size="small"
                   onClick={() => {
                     // const curFormValue: any = get(curConditionList, curPathArr, []);
-                    // console.log("curFormValue:", curFormValue);
-                    // curFormValue.push(makeRule("record", propsItem?.deep));
-                    // conditionForm.setFieldValue(curPathArr, curFormValue);
-                    add(makeRule(ConditionType.single, propsItem?.deep));
+                    add(makeCondition(ConditionType.single, propsItem?.deep));
                   }}
                 >
                   添加条件
@@ -487,10 +484,8 @@ const ConditionBuilder = (props: ConditionBuildeProps) => {
                     type="primary"
                     size="small"
                     onClick={() => {
-                      add(makeRule(ConditionType.group, propsItem?.deep));
+                      add(makeCondition(ConditionType.group, propsItem?.deep));
                       // const curFormValue: any = get(curConditionList, curPathArr, []);
-                      // console.log("curFormValue:", curFormValue);
-                      // curFormValue.push(makeRule("group", propsItem?.deep));
                       // conditionForm.setFieldValue(curPathArr, curFormValue);
                     }}
                   >
@@ -603,7 +598,7 @@ const ConditionBuilder = (props: ConditionBuildeProps) => {
                     type="primary"
                     size="small"
                     onClick={() => {
-                      add(makeRule(ConditionType.single, 0));
+                      add(makeCondition(ConditionType.single, 0));
                     }}
                   >
                     添加条件
@@ -613,7 +608,7 @@ const ConditionBuilder = (props: ConditionBuildeProps) => {
                     type="primary"
                     size="small"
                     onClick={() => {
-                      add(makeRule(ConditionType.group, 0));
+                      add(makeCondition(ConditionType.group, 0));
                     }}
                   >
                     添加条件组
