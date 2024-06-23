@@ -55,12 +55,6 @@ export type LeftType =
   | TimeField
   | SelectField;
 
-// type LeftType = {
-//   value: string;
-//   label: string;
-//   type: ConditionFormTypeEnum;
-//   selectOptions?: Array<any>; //可选的下拉option
-// };
 export enum ConjunctionEnum {
   and = 'and', // 单个条件
   or = 'or', // 条件组
