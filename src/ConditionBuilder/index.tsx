@@ -120,11 +120,6 @@ const ConditionBuilder = (props: ConditionBuildeProps) => {
     //   }
     // }, 100)
   }, [conditionForm, initialValue]);
-  const handleFormFinish = async (values: any) => {
-    try {
-      console.log('values:', values);
-    } catch (error) {}
-  };
   const recordForm = (
     formProps: any,
     removeStore: any,
@@ -559,7 +554,7 @@ const ConditionBuilder = (props: ConditionBuildeProps) => {
       <ConfigProvider locale={zhCN}>
         <Form
           form={conditionForm}
-          onFinish={handleFormFinish}
+          // onFinish={handleFormFinish}
           disabled={readonly}
         >
           <Form.Item noStyle name={['id']} initialValue={nanoid()} />
@@ -656,11 +651,6 @@ const ConditionBuilder = (props: ConditionBuildeProps) => {
               </div>
             )}
           </Form.List>
-          <Form.Item>
-            <Button type="primary" htmlType="submit">
-              保存
-            </Button>
-          </Form.Item>
         </Form>
       </ConfigProvider>
     </div>

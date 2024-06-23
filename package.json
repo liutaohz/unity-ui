@@ -45,15 +45,17 @@
     ]
   },
   "dependencies": {
-    "@ant-design/icons": "^4.8.0",
-    "antd": "^5.17.4",
-    "classnames": "^2.3.1",
-    "react": "^16.12.0"
+    "classnames": "^2.3.1"
+  },
+  "peerDependencies": {
+    "react": ">=16.12.0",
+    "cron-parser": ">=4.9.0",
+    "antd": ">=5.0.0",
+    "@ant-design/icons": ">=4.8.0"
   },
   "devDependencies": {
     "@umijs/test": "^4.2.10",
     "commitizen": "^4.2.4",
-    "cron-parser": "^4.9.0",
     "dumi": "^1.0.16",
     "father-build": "^1.17.2",
     "gh-pages": "^6.1.1",
